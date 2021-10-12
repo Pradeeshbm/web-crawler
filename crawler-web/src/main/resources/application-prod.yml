@@ -1,0 +1,22 @@
+server:
+  port:8080
+
+spring:
+  profiles:
+    active: default
+  application:
+    name: Crawler-Web
+
+  couchbase:
+    connection-string: couchbase://127.0.0.1
+    username: crawler
+    password: crawler
+    bucket-name: crawler-bucket
+
+kafka:
+  bootstrapAddress: localhost:9092
+  urlEventTopic: CRW_TOPIC_NEW_URL
+
+logging:
+  level: {org.pradeesh.crawler.crawlerweb: debug}
+
