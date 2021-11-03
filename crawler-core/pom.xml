@@ -5,8 +5,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <parent>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.5</version>
@@ -14,37 +13,48 @@
 	</parent>
 
 	<groupId>org.pradeesh.crawler</groupId>
-	<artifactId>crawler-web</artifactId>
+	<artifactId>crawler-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crawler-web</name>
-	<description>Web crawler</description>
-
+	<name>crawler-core</name>
+	<description>Crawler Core</description>
 	<properties>
 		<java.version>17</java.version>
-		<spring.couchdb.version>4.1.1</spring.couchdb.version>
+		<jsoup.version>1.10.2</jsoup.version>
+		<minio.version>8.3.3</minio.version>
 		<crawler.common.version>0.0.1-SNAPSHOT</crawler.common.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${jsoup.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.minio</groupId>
+			<artifactId>minio</artifactId>
+			<version>${minio.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.pradeesh.crawler</groupId>
 			<artifactId>crawler-common</artifactId>
 			<version>${crawler.common.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -55,6 +65,11 @@
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

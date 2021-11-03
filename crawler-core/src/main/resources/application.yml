@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: default
+  application:
+    name: Crawler-Parser
+
+  couchbase:
+    connection-string: couchbase://127.0.0.1
+    username: crawler
+    password: crawler
+    bucket-name: crawler-bucket
+
+crawler:
+  storage:
+    minio:
+      url: http://localhost:9000
+      accessKey: Q3AM3UQ867SPQQA43P2F
+      secretKey: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG
+      doc-bucket: web-docs-bucket
+      doc-path: /html-pages/
+
+kafka:
+  bootstrapAddress: localhost:9092
+  urlEventTopic: CRW_TOPIC_NEW_URL
+  consumerGroup: DEFAULT_NEW_URL_CS_GROUP
+
+logging:
+  level: {org.pradeesh.crawler.parser: debug}
+
