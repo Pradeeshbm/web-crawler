@@ -5,6 +5,7 @@ package com.pradeesh.crawler.common.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
+
 /**
  * The type Couchbase properties.
  *
