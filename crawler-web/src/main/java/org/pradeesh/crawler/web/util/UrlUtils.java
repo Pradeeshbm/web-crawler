@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package org.pradeesh.crawler.crawlerweb.util;
+package org.pradeesh.crawler.web.util;
 
 /**
  * The type Url utils contains utility methods for URL related operations

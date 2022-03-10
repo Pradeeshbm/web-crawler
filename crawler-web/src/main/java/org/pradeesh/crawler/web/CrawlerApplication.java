@@ -13,7 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
  * @author pradeesh.kumar
  */
 @SpringBootApplication
-@ConfigurationPropertiesScan("org.pradeesh.crawler.crawlerweb.config")
+@ConfigurationPropertiesScan("org.pradeesh.crawler.web.config")
 public class CrawlerApplication {
 
     /**

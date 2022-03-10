@@ -2,7 +2,7 @@
  * Copyright (c) 2021. Pradeesh Kumar
  */
 
-package org.pradeesh.crawler.crawlerweb.util;
+package org.pradeesh.crawler.web.util;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
