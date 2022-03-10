@@ -12,22 +12,7 @@ import java.net.URI;
  */
 public final class UrlUtils {
 
-    private static final char CHAR_HASH = '#';
-
     private UrlUtils() {}
-
-    /**
-     * Removes the hash part of the url and returns the rest of the url
-     *
-     * @return the string
-     */
-    public static String removeHash(String url) {
-        int hashIndex = url.indexOf(CHAR_HASH);
-        if (hashIndex != -1) {
-            url = url.substring(0, hashIndex - 1);
-        }
-        return url;
-    }
 
     /**
      * Checks if the url from origin

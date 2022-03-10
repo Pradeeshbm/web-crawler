@@ -8,7 +8,7 @@ import com.pradeesh.crawler.common.message.UrlIndex;
 import com.pradeesh.crawler.common.producer.UrlEventProducer;
 import com.pradeesh.crawler.common.repository.UrlIndexRepository;
 import com.pradeesh.crawler.common.util.CrawlerUtils;
-import com.pradeesh.crawler.common.util.UrlUtils;
+import com.pradeesh.crawler.common.util.UrlPreProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.pradeesh.crawler.web.dto.IndexResponse;
@@ -35,7 +35,7 @@ public class DefaultUrlIndexerService implements UrlIndexerService {
     public Mono<IndexResponse> addToIndex(final String url) {
         try {
             log.debug("Parsing the url: {}", url);
-            final String refinedUrl = UrlUtils.removeHash(url);
+            final String refinedUrl = UrlPreProcessor.doPreprocess(url);
             log.debug("After removing the hash part of the url: {}", refinedUrl);
             Mono<UrlIndex> urlIndexMono = urlIndexRepo.findByUrl(refinedUrl);
             return urlIndexMono

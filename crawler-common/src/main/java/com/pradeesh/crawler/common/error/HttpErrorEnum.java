@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- * The enum contains error message constans and HTTP response code associated with. Also utility methods to create custom exception
+ * The enum contains error message constants and HTTP response code associated with. Also utility methods to create custom exception
  *
  * @author pradeesh.kumar
  */

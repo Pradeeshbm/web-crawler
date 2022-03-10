@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-17-slim AS build
+FROM maven:3.10.0-jdk-17-slim AS build
 RUN mkdir /project
 COPY . /project
 WORKDIR /project
