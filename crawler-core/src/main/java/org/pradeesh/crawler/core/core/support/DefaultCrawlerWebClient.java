@@ -27,7 +27,7 @@ public class DefaultCrawlerWebClient implements CrawlerWebClient {
             Connection.Response response = Jsoup.connect(url).execute();
             int responseStatus = response.statusCode();
             if (!is2xxResponse(responseStatus)) {
-                log.warn("Received non success response for the url: {}, response code: {}, status: ", url, responseStatus, response.statusMessage());
+                log.warn("Received non success response for the url: {}, response code: {}, status: {}", url, responseStatus, response.statusMessage());
             }
             if (!isHtmlPage(response.contentType())) {
                 log.warn("Url is not a html page: {}, contentType: {}", url, response.contentType());

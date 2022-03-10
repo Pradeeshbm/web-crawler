@@ -7,10 +7,10 @@ package org.pradeesh.crawler.core.core.support;
 import com.pradeesh.crawler.common.message.UrlIndex;
 import com.pradeesh.crawler.common.producer.UrlEventProducer;
 import com.pradeesh.crawler.common.repository.UrlIndexRepository;
+import com.pradeesh.crawler.common.util.UrlPreProcessor;
 import com.pradeesh.crawler.common.util.UrlUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jsoup.nodes.Document;
 import org.pradeesh.crawler.core.core.CrawlerEngine;
 import org.pradeesh.crawler.core.core.CrawlerWebClient;
 import org.pradeesh.crawler.core.message.WebDocument;
@@ -49,7 +49,7 @@ public final class DefaultCrawlerEngine implements CrawlerEngine {
         htmlDoc.select(HYPERLINK_TAG_NAME)
                 .parallelStream()
                 .map(hyperlink -> hyperlink.attr(HYPERLINK_ATTR_NAME))
-                .map(UrlUtils::removeHash)
+                .map(UrlPreProcessor::doPreprocess)
                 .filter(url -> UrlUtils.isFromSameOrigin(originUrl, url))
                 .filter(this::notExistsOrExpired)
                 .forEach(urlEventProducer::emit);
