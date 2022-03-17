@@ -4,11 +4,11 @@
 
 package org.pradeesh.crawler.core.core.support;
 
-import com.pradeesh.crawler.common.message.UrlIndex;
-import com.pradeesh.crawler.common.producer.UrlEventProducer;
-import com.pradeesh.crawler.common.repository.UrlIndexRepository;
-import com.pradeesh.crawler.common.util.UrlPreProcessor;
-import com.pradeesh.crawler.common.util.UrlUtils;
+import org.pradeesh.crawler.common.message.UrlIndex;
+import org.pradeesh.crawler.common.producer.UrlEventProducer;
+import org.pradeesh.crawler.common.repository.UrlIndexRepository;
+import org.pradeesh.crawler.common.util.UrlPreProcessor;
+import org.pradeesh.crawler.common.util.UrlUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.pradeesh.crawler.core.core.CrawlerEngine;

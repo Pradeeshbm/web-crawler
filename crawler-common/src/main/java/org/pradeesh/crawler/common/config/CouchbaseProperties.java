@@ -1,17 +1,17 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.config;
+package org.pradeesh.crawler.common.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
 
 /**
- * The type Kafka properties
+ * The type Couchbase properties.
  *
  * @author pradeesh.kumar
  */
 @ConstructorBinding
-@ConfigurationProperties(prefix = "kafka")
-public record KafkaProperties(String bootstrapAddress, String urlEventTopic, String consumerGroup) {
+@ConfigurationProperties(prefix = "spring.couchbase")
+public record CouchbaseProperties(String connectionString, String username, String password, String bucketName) {
 }

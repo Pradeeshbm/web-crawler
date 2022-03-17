@@ -1,4 +1,4 @@
-package com.pradeesh.crawler.common.util;
+package org.pradeesh.crawler.common.util;
 
 public class UrlPreProcessor {
 

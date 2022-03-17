@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.config;
+package org.pradeesh.crawler.common.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ import org.springframework.data.couchbase.repository.config.EnableReactiveCouchb
  */
 @Configuration
 @RequiredArgsConstructor
-@EnableReactiveCouchbaseRepositories(basePackages = "org.pradeesh.crawler.crawlerweb.repository")
+@EnableReactiveCouchbaseRepositories(basePackages = "org.pradeesh.crawler.common.repository")
 public class DatabaseConfig extends AbstractCouchbaseConfiguration {
 
     private final CouchbaseProperties couchbaseProperties;

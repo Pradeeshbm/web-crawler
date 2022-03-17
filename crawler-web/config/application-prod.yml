@@ -16,6 +16,7 @@ spring:
 kafka:
   bootstrapAddress: localhost:9092
   urlEventTopic: CRW_TOPIC_NEW_URL
+  consumerGroup: DEFAULT_NEW_URL_CS_GROUP
 
 logging:
   level: {org.pradeesh.crawler.crawlerweb: debug}

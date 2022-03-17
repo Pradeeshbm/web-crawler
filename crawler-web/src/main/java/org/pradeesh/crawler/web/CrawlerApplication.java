@@ -12,8 +12,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
  *
  * @author pradeesh.kumar
  */
-@SpringBootApplication
-@ConfigurationPropertiesScan("org.pradeesh.crawler.web.config")
+@SpringBootApplication(scanBasePackages = {"org.pradeesh.crawler", "org.pradeesh.crawler.common", "org.pradeesh.crawler.web"})
+@ConfigurationPropertiesScan("org.pradeesh.crawler.common.config")
 public class CrawlerApplication {
 
     /**

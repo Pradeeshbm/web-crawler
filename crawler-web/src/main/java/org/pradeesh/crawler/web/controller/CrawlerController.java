@@ -37,7 +37,7 @@ public class CrawlerController {
      * @return the response entity
      */
     @PostMapping("/index")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public Mono<IndexResponse> addToIndex(@RequestParam @Valid
                                           @NotBlank(message = "URL Cannot be blank!")
                                           @URL(message = "Invalid URL!") String url) {

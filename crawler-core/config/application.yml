@@ -14,8 +14,8 @@ crawler:
   storage:
     minio:
       url: http://localhost:9000
-      accessKey: Q3AM3UQ867SPQQA43P2F
-      secretKey: zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG
+      accessKey: 8PYS598TFSSPTBH42S4Y
+      secretKey: jISGo99J13erT66SLHE5qy06AZcGR5N+ZAz8ErNw
       doc-bucket: web-docs-bucket
       doc-path: /html-pages/
 

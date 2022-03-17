@@ -4,7 +4,7 @@
 
 package org.pradeesh.crawler.core.listener;
 
-import com.pradeesh.crawler.common.config.KafkaProperties;
+import org.pradeesh.crawler.common.config.KafkaProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.URL;

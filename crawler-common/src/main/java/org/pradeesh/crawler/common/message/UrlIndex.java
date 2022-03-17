@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.message;
+package org.pradeesh.crawler.common.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
