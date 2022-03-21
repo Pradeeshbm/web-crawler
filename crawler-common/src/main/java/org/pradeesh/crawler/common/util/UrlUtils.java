@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.util;
+package org.pradeesh.crawler.common.util;
 
 import java.net.URI;
 

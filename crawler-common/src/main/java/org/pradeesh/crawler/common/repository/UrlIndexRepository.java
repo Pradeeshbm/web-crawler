@@ -1,9 +1,9 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.repository;
+package org.pradeesh.crawler.common.repository;
 
-import com.pradeesh.crawler.common.message.UrlIndex;
+import org.pradeesh.crawler.common.message.UrlIndex;
 import org.springframework.data.couchbase.repository.ReactiveCouchbaseRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;

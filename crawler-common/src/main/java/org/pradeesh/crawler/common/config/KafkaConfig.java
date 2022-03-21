@@ -2,7 +2,7 @@
  * Copyright (c) 2021. Pradeesh Kumar
  */
 
-package com.pradeesh.crawler.common.config;
+package org.pradeesh.crawler.common.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.AdminClient;

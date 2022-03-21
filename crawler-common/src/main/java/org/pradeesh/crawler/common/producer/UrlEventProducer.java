@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.producer;
+package org.pradeesh.crawler.common.producer;
 
 /**
  * The interface Url event producer.

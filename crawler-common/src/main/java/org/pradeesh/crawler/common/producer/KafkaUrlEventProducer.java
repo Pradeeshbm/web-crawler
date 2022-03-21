@@ -1,10 +1,10 @@
 /*
  * Copyright (c) 2021. Pradeesh Kumar
  */
-package com.pradeesh.crawler.common.producer;
+package org.pradeesh.crawler.common.producer;
 
-import com.pradeesh.crawler.common.config.KafkaProperties;
-import com.pradeesh.crawler.common.error.HttpErrorEnum;
+import org.pradeesh.crawler.common.config.KafkaProperties;
+import org.pradeesh.crawler.common.error.HttpErrorEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -27,7 +27,7 @@ public class KafkaUrlEventProducer implements UrlEventProducer {
     public void emit(String url) {
         try {
             log.info("Producing new url event to the kafka topic: {} for the url: {}", kafkaProperties.urlEventTopic(), url);
-            kafkaTemplate.send(kafkaProperties.urlEventTopic(), url);
+            kafkaTemplate.send(kafkaProperties.urlEventTopic(), url, url);
             log.info("Url {} has been pushed to the kafka topic: {}", url, kafkaProperties.urlEventTopic());
         } catch (RuntimeException e) {
             log.error("Error occurred while pushing the url: {} to the kafka topic: {}", url, kafkaProperties.urlEventTopic(), e);

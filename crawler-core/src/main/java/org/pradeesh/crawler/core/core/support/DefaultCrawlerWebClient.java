@@ -5,6 +5,7 @@
 package org.pradeesh.crawler.core.core.support;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,6 +21,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class DefaultCrawlerWebClient implements CrawlerWebClient {
+
+    private static final String CONTENT_TYPE_HTML = "text/html";
 
     @Override
     public WebDocument get(String url) {
@@ -40,9 +43,8 @@ public class DefaultCrawlerWebClient implements CrawlerWebClient {
         }
     }
 
-    // TODO - check if the page is html
     private static boolean isHtmlPage(String contentType) {
-        return true;
+        return StringUtils.contains(contentType, CONTENT_TYPE_HTML);
     }
 
     private static boolean is2xxResponse(int response) {
