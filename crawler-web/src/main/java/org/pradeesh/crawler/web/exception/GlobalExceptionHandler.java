@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.support.WebExchangeBindException;
+import reactor.core.publisher.Mono;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
@@ -30,14 +31,14 @@ public class GlobalExceptionHandler {
      * @return the response entity
      */
     @ExceptionHandler(WebExchangeBindException.class)
-    public ResponseEntity<String> handleRequestBodyError(WebExchangeBindException e) {
+    public Mono<ResponseEntity<String>> handleRequestBodyError(WebExchangeBindException e) {
         log.error("Error occurred in request body", e);
         String error = e.getBindingResult().getAllErrors().stream()
                 .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .sorted()
                 .collect(Collectors.joining(", "));
         log.error("Errors: {}", error);
-        return ResponseEntity.badRequest().body(error);
+        return Mono.just(ResponseEntity.badRequest().body(error));
     }
 
     /**
@@ -47,13 +48,13 @@ public class GlobalExceptionHandler {
      * @return the response entity
      */
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<String> handleConstraintViolationError(ConstraintViolationException e) {
+    public Mono<ResponseEntity<String>> handleConstraintViolationError(ConstraintViolationException e) {
         log.error("Error occurred in request body", e);
         String error = e.getConstraintViolations().stream()
                 .map(ConstraintViolation::getMessage)
                 .sorted()
                 .collect(Collectors.joining(", "));
         log.error("Errors: {}", error);
-        return ResponseEntity.badRequest().body(error);
+        return Mono.just(ResponseEntity.badRequest().body(error));
     }
 }
