@@ -6,6 +6,17 @@
 version: 2
 updates:
   - package-ecosystem: "maven" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/crawler-web/" # Location of package manifests
     schedule:
       interval: "daily"
+      
+- package-ecosystem: "maven" # See documentation for possible values
+    directory: "/crawler-core/" # Location of package manifests
+    schedule:
+      interval: "daily"
+
+- package-ecosystem: "maven" # See documentation for possible values
+    directory: "/crawler-common/" # Location of package manifests
+    schedule:
+      interval: "daily"
+      
