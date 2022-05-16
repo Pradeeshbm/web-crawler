@@ -19,7 +19,7 @@
 	<description>Crawler Core</description>
 	<properties>
 		<java.version>17</java.version>
-		<jsoup.version>1.14.3</jsoup.version>
+		<jsoup.version>1.15.1</jsoup.version>
 		<minio.version>8.4.1</minio.version>
 		<crawler.common.version>0.0.1-SNAPSHOT</crawler.common.version>
 	</properties>
